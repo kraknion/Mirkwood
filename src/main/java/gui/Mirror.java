@@ -25,6 +25,8 @@ import com.googlecode.lanterna.terminal.Terminal;
 
 import script.Characters;
 import script.Hero;
+import script.Foe;
+import gui.PanelStatus;
 import util.AudioFilePlayer;
 
 public class Mirror {
@@ -37,6 +39,7 @@ public class Mirror {
     MultiWindowTextGUI board;
 
     Hero hero;
+    Foe foe;
     Characters _chars;
 
     AudioFilePlayer ap;
@@ -94,6 +97,7 @@ public class Mirror {
                 map.updatePlayer(keyStroke);
 
                 if (keyStroke.getCharacter() == 'f') {
+                //if (keyStroke.getCharacter() == 'f' || hero.get_position() == foe.get_position()) {
                     BasicWindow diaFight = new WFight(Mirror.this);
 
                     ap.stop();
@@ -166,6 +170,7 @@ public class Mirror {
             ap.stop();
         }
     }
+
 
     /*
 	public void playMusic(){
